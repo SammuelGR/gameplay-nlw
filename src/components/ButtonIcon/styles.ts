@@ -24,10 +24,6 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderColor: theme.colors.line,
   },
-  icon: {
-    width: 24,
-    height: 18,
-  },
 });
 
 export default styles;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import {
   Image,
   Text,
@@ -7,15 +7,14 @@ import {
   View,
 } from "react-native";
 
-import DiscordImg from "../../assets/discord.png";
-
 import styles from "./styles";
 
 interface Props extends TouchableOpacityProps {
   title: string;
+  Icon: FunctionComponent;
 }
 
-const ButtonIcon = ({ title, onPress }: Props) => {
+const ButtonIcon = ({ title, onPress, Icon }: Props) => {
   return (
     <TouchableOpacity
       style={styles.container}
@@ -23,7 +22,7 @@ const ButtonIcon = ({ title, onPress }: Props) => {
       onPress={onPress}
     >
       <View style={styles.iconWrapper}>
-        <Image source={DiscordImg} style={styles.icon} />
+        <Icon />
       </View>
 
       <Text style={styles.title}>{title}</Text>

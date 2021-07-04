@@ -2,6 +2,7 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 
 import IllustrationImg from "../../assets/illustration.png";
+import DiscordSvg from "../../assets/discord.svg";
 
 import ButtonIcon from "../../components/ButtonIcon";
 
@@ -22,7 +23,11 @@ const SignIn = () => (
         favoritos com seus amigos
       </Text>
 
-      <ButtonIcon onPress={() => {}} title="Entrar com Discord" />
+      <ButtonIcon
+        Icon={DiscordSvg}
+        onPress={() => {}}
+        title="Entrar com Discord"
+      />
     </View>
   </View>
 );
