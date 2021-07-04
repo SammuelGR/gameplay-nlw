@@ -10,7 +10,7 @@ import AppLoading from "expo-app-loading";
 
 import Background from "./src/components/Background";
 import SignIn from "./src/screens/SignIn";
-// import Home from "./src/screens/Home";
+import Home from "./src/screens/Home";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,8 +29,8 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <SignIn />
-      {/* <Home /> */}
+      {/* <SignIn /> */}
+      <Home />
     </Background>
   );
 }
