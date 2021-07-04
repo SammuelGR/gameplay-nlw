@@ -6,11 +6,11 @@ import { theme } from "../../global/styles/theme";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 24,
   },
   header: {
     width: "100%",
     height: 48,
-    paddingHorizontal: 24,
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: getStatusBarHeight() + 25,

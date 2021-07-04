@@ -3,6 +3,8 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import { CategoryList } from "../../components/contexts/CategoryList/CategoryList";
+
 import { theme } from "../../global/styles/theme";
 
 import styles from "./styles";
@@ -12,7 +14,7 @@ const SignIn = () => (
     <View style={styles.header}>
       <LinearGradient
         style={styles.profileImgBackground}
-        colors={[theme.colors.secondary50, theme.colors.secondary70]}
+        colors={[theme.colors.secondary20, theme.colors.secondary60]}
       >
         <Image
           style={styles.profileImg}
@@ -38,6 +40,8 @@ const SignIn = () => (
         <MaterialCommunityIcons name="plus" color="#FFF" size={24} />
       </TouchableOpacity>
     </View>
+
+    <CategoryList />
   </View>
 );
 

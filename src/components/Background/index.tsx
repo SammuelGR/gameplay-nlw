@@ -9,12 +9,10 @@ interface IProps {
 }
 
 export default function Background({ children }: IProps) {
-  const { secondary80, secondary100 } = theme.colors;
-
   return (
     <LinearGradient
       style={styles.container}
-      colors={[secondary80, secondary100]}
+      colors={[theme.colors.secondary80, theme.colors.secondary100]}
     >
       {children}
     </LinearGradient>
