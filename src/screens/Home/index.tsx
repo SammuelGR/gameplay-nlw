@@ -2,6 +2,7 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 import { CategoryList } from "../../components/contexts/CategoryList/CategoryList";
 
@@ -9,40 +10,44 @@ import { theme } from "../../global/styles/theme";
 
 import styles from "./styles";
 
-const SignIn = () => (
-  <View style={styles.container}>
-    <View style={styles.header}>
-      <LinearGradient
-        style={styles.profileImgBackground}
-        colors={[theme.colors.secondary20, theme.colors.secondary60]}
-      >
-        <Image
-          style={styles.profileImg}
-          source={{ uri: "https://github.com/sammuelgr.png" }}
-        />
-      </LinearGradient>
+const Home = () => {
+  const navigation = useNavigation();
 
-      <View style={styles.greetings}>
-        <View style={styles.greetingsRow}>
-          <Text style={styles.greetingsTitle}>Olá, </Text>
-          <Text style={[styles.greetingsTitle, styles.greetingsBold]}>
-            Sammuel
-          </Text>
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <LinearGradient
+          style={styles.profileImgBackground}
+          colors={[theme.colors.secondary20, theme.colors.secondary60]}
+        >
+          <Image
+            style={styles.profileImg}
+            source={{ uri: "https://github.com/sammuelgr.png" }}
+          />
+        </LinearGradient>
+
+        <View style={styles.greetings}>
+          <View style={styles.greetingsRow}>
+            <Text style={styles.greetingsTitle}>Olá, </Text>
+            <Text style={[styles.greetingsTitle, styles.greetingsBold]}>
+              Sammuel
+            </Text>
+          </View>
+          <Text style={styles.greetingsSubtitle}>Hoje é dia de vitória</Text>
         </View>
-        <Text style={styles.greetingsSubtitle}>Hoje é dia de vitória</Text>
+
+        <TouchableOpacity
+          style={styles.headerButton}
+          onPress={() => navigation.navigate("AppointmentCreate")}
+          activeOpacity={0.7}
+        >
+          <MaterialCommunityIcons name="plus" color="#FFF" size={24} />
+        </TouchableOpacity>
       </View>
 
-      <TouchableOpacity
-        style={styles.headerButton}
-        onPress={() => {}}
-        activeOpacity={0.7}
-      >
-        <MaterialCommunityIcons name="plus" color="#FFF" size={24} />
-      </TouchableOpacity>
+      <CategoryList />
     </View>
+  );
+};
 
-    <CategoryList />
-  </View>
-);
-
-export default SignIn;
+export default Home;
